@@ -1,0 +1,84 @@
+<% include layout.ejs %>
+	
+	<div class="limiter">
+		<div class="container-login100">
+            <div class="login100-more" style="background-image: url('images/bg-01.jpg');">
+               <div  class="" style="margin: 100px 10px;">
+                <%if (errors.length > 0) { %>
+                    <% errors.forEach(function(error){ %>
+
+                        <p class="alert alert-danger"><%= error.msg %></p>
+
+                    <% }) %>
+                <% } %>
+               </div> 
+            </div>
+
+			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+				<form class="login100-form validate-form" action="/users/regester" method="POST">
+					<span class="login100-form-title p-b-59">
+						Sign Up
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate="Name is required">
+						<span class="label-input100">Full Name</span>
+						<input class="input100" type="text" name="name1" placeholder="Name..." required autocomplete="off">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<span class="label-input100">Email</span>
+						<input class="input100" type="email" name="email1" placeholder="Email addess..." required autocomplete="off">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="pass" placeholder="*************" required autocomplete="new-password">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Repeat Password is required">
+						<span class="label-input100">Repeat Password</span>
+						<input class="input100" type="password" name="repeat-pass" placeholder="*************"required autocomplete="new-password">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">
+								Sign Up
+							</button>
+						</div>
+
+						<a href="#" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+							Sign in
+							<i class="fa fa-long-arrow-right m-l-5"></i>
+						</a>
+					</div>
+                </form>
+                <!--<form enctype="multipart/form-data" action="/users/regester" method="POST">
+					<div class="form-group">
+                        <input type="text" class="form-control" name="name1" placeholder="Enter Name" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="email1" placeholder="Enter Email" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="pass" placeholder="Enter password" autocomplete="new-password">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="repeat_pass" placeholder="Enter password" autocomplete="new-password">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" class="form-control" name="profimg">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+				</form>-->
+
+			</div>
+		</div>
+	</div>
+
+<% include layoutback.ejs %>
